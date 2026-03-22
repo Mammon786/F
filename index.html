@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Course Vault | Muhammad Zubair</title>
+    <title>Premium Course Vault | Muhammad Zubair</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #1a1a2e; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: white; }
         .vault-card { background: #16213e; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); text-align: center; max-width: 450px; border: 2px solid #0f3460; }
-        
         h1 { color: #e94560; margin-bottom: 10px; font-size: 1.8rem; }
         .intro-text { font-size: 0.95rem; color: #95a5a6; margin-bottom: 20px; line-height: 1.5; }
-        
-        /* COUNTER BOX */
         .counter-box { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; font-size: 0.8rem; }
         .stat { background: #0f3460; padding: 5px 12px; border-radius: 10px; color: #e94560; font-weight: bold; border: 1px solid #16213e; }
-
-        /* PASSWORD INPUT */
         .input-group { margin-top: 20px; }
         input { padding: 15px; width: 85%; border-radius: 30px; border: 2px solid #0f3460; background: #1a1a2e; color: white; text-align: center; font-size: 1.1rem; outline: none; transition: 0.3s; }
         input:focus { border-color: #e94560; }
-        
         .unlock-btn { background: #e94560; color: white; border: none; padding: 15px 40px; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 1.1rem; margin-top: 20px; width: 93%; transition: 0.3s; }
         .unlock-btn:hover { background: #ff4d6d; transform: scale(1.02); }
-        
-        /* THE HINT SECTION */
         .hint-text { margin-top: 25px; font-size: 0.9rem; color: #f1c40f; line-height: 1.4; border-top: 1px solid #0f3460; padding-top: 15px; }
         .password-tag { background: #f1c40f; color: #1a1a2e; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
-        
-        #msg { margin-top: 15px; font-size: 0.85rem; display: none; }
+        #msg { margin-top: 15px; font-size: 0.85rem; display: none; font-weight: bold; }
     </style>
 </head>
 <body onload="initVault()">
@@ -56,9 +47,9 @@
 </div>
 
 <script>
-// --- CONFIGURATION ---
+// --- CONFIGURATION AT THE TOP ---
 const CORRECT_PASSWORD = "FreeLearn26"; 
-const DRIVE_URL = "https://drive.google.com/your-actual-link-here"; // <--- PASTE YOUR GOOGLE DRIVE LINK HERE
+const DRIVE_URL = "https://drive.google.com/drive/folders/12Od6RMGVQTkkOQ5JC8EpWRxllhIj6qoq";
 
 function initVault() {
     // Total Visits Logic
@@ -85,6 +76,8 @@ function checkVault() {
         msg.style.color = "#2ecc71";
         msg.innerText = "Access Granted! Redirecting...";
         msg.style.display = "block";
+        
+        // Use the DRIVE_URL variable defined at the top
         setTimeout(() => {
             window.location.href = DRIVE_URL;
         }, 1000);
